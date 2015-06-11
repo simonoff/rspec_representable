@@ -6,6 +6,10 @@ module RSpec
         'collection'
       end
 
+      def expectation
+        'collection'
+      end
+
       def matches?(subject)
         super(subject)
         options_for(property)[:collection] == true

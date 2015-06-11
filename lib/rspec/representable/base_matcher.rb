@@ -41,11 +41,11 @@ module RSpec
         !definitions_for(property).nil?
       end
 
-      protected
-
       def expectation
         "#{subject.class} to have a Representable #{property_type_description} called #{property}"
       end
+
+      protected
 
       def options_for(property)
         definitions_for(property).instance_variable_get(:@options)

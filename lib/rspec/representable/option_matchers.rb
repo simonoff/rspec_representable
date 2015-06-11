@@ -1,6 +1,8 @@
 require 'rspec/representable/as_matcher'
 require 'rspec/representable/extend_matcher'
 require 'rspec/representable/attribute_matcher'
+require 'rspec/representable/content_matcher'
+
 module RSpec
   module Representable
     module OptionMatchers
@@ -16,6 +18,11 @@ module RSpec
 
       def with_attribute(value = true)
         add_submatcher(AttributeMatcher.new(property, value))
+        self
+      end
+
+      def with_content(value = true)
+        add_submatcher(ContentMatcher.new(property, value))
         self
       end
     end
